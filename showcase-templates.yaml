@@ -13,5 +13,6 @@ spec:
 #    - https://github.com/janus-idp/software-templates/blob/main/scaffolder-templates/spring-boot-backend-template/template.yaml
 #    - https://github.com/janus-idp/software-templates/blob/main/scaffolder-templates/quarkus-backend-template/template.yaml
      - https://github.com/cooktheryan/quarkus-ansible-dh/blob/main/scaffolder-templates/quarkus-web-template/template.yaml
+#
 #    - https://github.com/janus-idp/software-templates/blob/main/scaffolder-templates/argocd-template/template.yaml
 #    - https://github.com/janus-idp/software-templates/blob/main/scaffolder-templates/ansible-job/template.yaml
