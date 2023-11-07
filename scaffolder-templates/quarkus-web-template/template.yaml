@@ -181,7 +181,7 @@ spec:
       name: Generating Ansible Resources
       action: fetch:template
       input:
-        url: ../../scaffolder-skeletons/ansible-skeleton
+        url: ../../scaffolder-skeletons/ansible-skeleton/
         values:
           component_id: ${{ parameters.component_id }}
           description: ${{ parameters.description }}
