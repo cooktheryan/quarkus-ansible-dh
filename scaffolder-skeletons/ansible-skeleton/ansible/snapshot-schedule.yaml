@@ -1,0 +1,9 @@
+apiVersion: tower.ansible.com/v1alpha1
+kind: AnsibleSchedule
+metadata:
+  name: snap-schedule
+spec:
+  connection_secret: aap-access
+  name: "Snapshot Schedule"
+  unified_job_template: "Volume Snapshots"
+  rrule: "DTSTART:20210101T000000Z RRULE:INTERVAL=1;FREQ=HOURLY"
