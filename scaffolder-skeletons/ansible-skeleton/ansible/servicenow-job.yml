@@ -2,8 +2,8 @@
 apiVersion: tower.ansible.com/v1alpha1
 kind: AnsibleJob
 metadata:
-  name: servicenow
+  name: servicenow-${{ values.component_id }}
   namespace: janus-argocd
 spec:
   connection_secret: aap-access
-  job_template_name: Service Now Change Request
+  job_template_name: "Service Now Change Request"
