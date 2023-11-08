@@ -3,7 +3,8 @@ apiVersion: tower.ansible.com/v1alpha1
 kind: AnsibleJob
 metadata:
   name: servicenow
+  namespace: janus-argocd
 spec:
-  connection_secret: aapaccess
+  connection_secret: aap-access
   job_template_name: Service Now New Change Request
   inventory: Demo Inventory

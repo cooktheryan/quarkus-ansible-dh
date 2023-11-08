@@ -2,6 +2,7 @@ apiVersion: tower.ansible.com/v1alpha1
 kind: AnsibleSchedule
 metadata:
   name: snap-schedule
+    namespace: janus-argocd
 spec:
   connection_secret: aap-access
   name: "Snapshot Schedule"
