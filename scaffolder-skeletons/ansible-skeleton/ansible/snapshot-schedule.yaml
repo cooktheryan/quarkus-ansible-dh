@@ -6,5 +6,5 @@ metadata:
 spec:
   connection_secret: aap-access
   name: "Snapshot Schedule"
-  unified_job_template: "Volume Snapshots"
+  unified_job_template: snapshot-${{values.component_id}}-template
   rrule: "DTSTART:20210101T000000Z RRULE:INTERVAL=1;FREQ=HOURLY"

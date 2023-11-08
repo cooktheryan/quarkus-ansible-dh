@@ -7,4 +7,3 @@ metadata:
 spec:
   connection_secret: aap-access
   job_template_name: Service Now Change Request
-  inventory: Demo Inventory
