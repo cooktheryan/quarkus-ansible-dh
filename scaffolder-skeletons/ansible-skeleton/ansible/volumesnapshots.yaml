@@ -1,0 +1,16 @@
+apiVersion: tower.ansible.com/v1alpha1
+kind: JobTemplate
+metadata:
+  name: snapshot-${{values.component_id}}-template
+  namespace: janus-argocd
+spec:
+  tower_auth_secret: aap-access
+  job_template_name: Volume Snapshots
+  job_template_project: dh-ansible
+  job_template_playbook: playbooks/volumesnapshots.yaml
+  job_template_ask_vars: true
+  job_template_inventory: ocp
+  job_template_credentials: ocp
+  job_template_extra_vars:
+    namespace: ${{ values.namespace }}
+  

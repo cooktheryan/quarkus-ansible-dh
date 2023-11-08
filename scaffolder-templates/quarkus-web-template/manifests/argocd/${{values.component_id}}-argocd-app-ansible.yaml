@@ -16,7 +16,7 @@ spec:
     path: ./ansible
   destination:
     server: https://kubernetes.default.svc
-    namespace: ${{ values.component_id }}-ansible
+    namespace: janus-argocd
   syncPolicy:
     automated:
       prune: true
