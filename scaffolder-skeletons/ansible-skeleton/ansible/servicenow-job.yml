@@ -6,5 +6,5 @@ metadata:
   namespace: janus-argocd
 spec:
   connection_secret: aap-access
-  job_template_name: Service Now New Change Request
+  job_template_name: Service Now Change Request
   inventory: Demo Inventory
