@@ -46,18 +46,20 @@ spec:
 
       FILE=$(params.component-id)-argocd-app-$ENVIRON.yaml
 
+      ANSIBLE_FILE=ansible/servicenow-job.yml
+
       sed -i "22s/.*/        value: $(params.image-tag)/" argocd/$FILE
 
       ## Modify the ansible job for service now that a new build is occuring
 
       # Replace the content after 'name:'
-      sed -i 's/\(name:\s*\).*/\1$(params.component-id)-$ENVIRON/' "$file"
+      sed -i 's/\(name:\s*\).*/\1$(params.component-id)-$ENVIRON/' $ANSIBLE_FILE
 
       # Replace the content after 'description:'
-      sed -i 's/\(description:\s*\).*/\1$(params.component-id) is being updated in $ENVIRON to $(params.image-tag)/' "$file"
+      sed -i 's/\(description:\s*\).*/\1$(params.component-id) is being updated in $ENVIRON to $(params.image-tag)/' $ANSIBLE_FILE
 
       # Replace the content after 'short_description:'
-      sed -i 's/\(short_description:\s*\).*/\1$(params.component-id)-$ENVIRON update/' "$file"
+      sed -i 's/\(short_description:\s*\).*/\1$(params.component-id)-$ENVIRON update/' $ANSIBLE_FILE
 
       git add .
 
