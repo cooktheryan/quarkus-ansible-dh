@@ -1,10 +1,10 @@
 apiVersion: tower.ansible.com/v1alpha1
 kind: AnsibleSchedule
 metadata:
-  name: ${{ values.component_id}}-snap-schedule
+  name: schedule
   namespace: janus-argocd
 spec:
   connection_secret: aap-access
-  name: "${{ values.component_id}}-Snapshot Schedule"
-  unified_job_template: snapshot-${{values.component_id}}-template
-  rrule: "DTSTART:20210101T000000Z RRULE:INTERVAL=1;FREQ=HOURLY"
+  name: ${{ values.component_id }}-volume-snapshots
+  rrule: "DTSTART:20210101T000000Z RRULE:FREQ=DAILY;INTERVAL=1;COUNT=1"
+  unified_job_template: ${{ values.component_id }}-volume-snapshots
