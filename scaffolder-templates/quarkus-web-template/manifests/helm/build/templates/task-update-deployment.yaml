@@ -53,7 +53,7 @@ spec:
       ## Modify the ansible job for service now that a new build is occuring
 
       # Replace the content after 'name:'
-      sed -i "s/\(name:\s*\).*/\1$(params.component-id)-$ENVIRON/" $ANSIBLE_FILE
+      sed -i "/job_template_name/!s/\(name:\s*\).*/\1$(params.component-id)-$ENVIRON/"
 
       # Replace the content after 'description:'
       sed -i "s/\(description:\s*\).*/\1$(params.component-id) is being updated in $ENVIRON to $(params.image-tag)/" $ANSIBLE_FILE
