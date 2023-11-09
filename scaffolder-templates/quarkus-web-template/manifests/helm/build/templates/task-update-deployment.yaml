@@ -53,13 +53,13 @@ spec:
       ## Modify the ansible job for service now that a new build is occuring
 
       # Replace the content after 'name:'
-      sed -i 's/\(name:\s*\).*/\1$(params.component-id)-$ENVIRON/' $ANSIBLE_FILE
+      sed -i "s/\(name:\s*\).*/\1$(params.component-id)-$ENVIRON/" $ANSIBLE_FILE
 
       # Replace the content after 'description:'
-      sed -i 's/\(description:\s*\).*/\1$(params.component-id) is being updated in $ENVIRON to $(params.image-tag)/' $ANSIBLE_FILE
+      sed -i "s/\(description:\s*\).*/\1$(params.component-id) is being updated in $ENVIRON to $(params.image-tag)/" $ANSIBLE_FILE
 
       # Replace the content after 'short_description:'
-      sed -i 's/\(short_description:\s*\).*/\1$(params.component-id)-$ENVIRON update/' $ANSIBLE_FILE
+      sed -i "s/\(short_description:\s*\).*/\1$(params.component-id)-$ENVIRON update/" $ANSIBLE_FILE
 
       git add .
 
