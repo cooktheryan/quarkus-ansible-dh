@@ -39,6 +39,9 @@ spec:
               containerPort: 8080
               protocol: TCP          
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - name: example_vol
+              mountPath: /tmp
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
@@ -53,3 +56,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+    volumes:
+      - name: example-volume
+        persistentVolumeClaim:
+          claimName: ${{ values.component_id }}-config-volume
