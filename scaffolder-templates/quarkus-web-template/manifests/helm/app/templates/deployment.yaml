@@ -40,7 +40,7 @@ spec:
               protocol: TCP          
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           volumeMounts:
-            - name: example_vol
+            - name: ${{ values.component_id }}-volume
               mountPath: /tmp
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
@@ -57,6 +57,6 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       volumes:
-        - name: example-volume
+        - name: ${{ values.component_id }}-volume
           persistentVolumeClaim:
-            claimName: ${{ values.component_id }}-config-volume
+            claimName: ${{ values.component_id }}-volume
