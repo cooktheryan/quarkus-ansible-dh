@@ -7,3 +7,5 @@ metadata:
 spec:
   connection_secret: aap-access
   job_template_name: "Service Now Change Request"
+  extra_vars:
+     short_description: "Deploying ${{ values.component_id }} to ${{ values.cluster }}"
